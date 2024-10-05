@@ -23,12 +23,29 @@
             top: 0;
             z-index: 1000;
         }
+        .logo {
+            width: 40px;
+            height: 40px;
+        }
+        .welcome-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
     <nav class="bg-blue-600 p-4 sticky-nav">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-white text-2xl font-bold">Betake Logistics</a>
+            <div class="flex items-center">
+                <svg class="logo mr-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#FFF" />
+                    <path d="M30 70 L50 30 L70 70 Z" fill="#2563EB" />
+                    <text x="50" y="80" font-family="Arial" font-size="14" fill="#2563EB" text-anchor="middle">BLS</text>
+                </svg>
+                <a href="#" class="text-white text-2xl font-bold">Betake Logistics</a>
+            </div>
             <button class="md:hidden text-white" id="menu-toggle">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -46,9 +63,11 @@
     <main class="container mx-auto mt-8 p-4 flex-grow">
         
         <section id="home" class="mb-12">
-          
+            <center><img src="favicon.jpg" alt="Betake Logistics Services" class="welcome-image">
+            </center><br>
             <h1 class="text-4xl font-bold mb-4">Welcome to Betake Logistics Loan Services</h1>
             <p class="text-lg">We offer competitive loan rates to help your business grow. Use our calculator below to estimate your loan.</p>
+
         </section>
 
         <section id="calculator" class="bg-white rounded-lg shadow-md p-6 mb-12">
