@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Betake Logistics Loan Calculator - Your trusted partner for logistics and financial solutions in Uganda.">
+    <meta name="keyword" content="Betake Logistics, loan calculator, logistics solutions, financial services, Uganda, business loans">
+    <meta name="author" content="Betake Logistics">
+    <link rel="icon" type="image/png" sizes="16x16" href="schoologo-2-150x150.png">
+    <link data-n-head="ssr" rel="manifest" href="/manifest.json" data-hid="manifest">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta property="og:site_name" content="Fresh Teacher's Library" />
+    <meta property="og:image" content="https://fresh-teacher.github.io/betakelogistics/favicon.jpg" />
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+    <nav class="bg-blue-600 p-4 sticky-nav">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold">Betake Logistics</a>
+            <button class="md:hidden text-white" id="menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <ul class="hidden md:flex space-x-4" id="menu">
+                <li><a href="#home" class="text-white hover:text-gray-200">Home</a></li>
+                <li><a href="#calculator" class="text-white hover:text-gray-200">Loan Calculator</a></li>
+                <li><a href="#about" class="text-white hover:text-gray-200">About Us</a></li>
+                <li><a href="#contact" class="text-white hover:text-gray-200">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto mt-8 p-4 flex-grow">
+        <section id="download" class="bg-white rounded-lg shadow-md p-6 mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Download Source Code</h2>
+        <p class="mb-4">Developers can download the C++ source code for the calculator here:</p>
+        <button id="downloadBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+            Download calculator.cpp
+        </button>
+    </section>
+        <section id="home" class="mb-12">
+          
+            <h1 class="text-4xl font-bold mb-4">Welcome to Betake Logistics Loan Services</h1>
+            <p class="text-lg">We offer competitive loan rates to help your business grow. Use our calculator below to estimate your loan.</p>
+        </section>
+
+        <section id="calculator" class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Loan Calculator</h2>
+            <form id="loanForm" class="space-y-4">
+                <div>
+                    <label for="loanAmount" class="block text-sm font-medium text-gray-700">Loan Amount (UGX)</label>
+                    <input type="number" id="loanAmount" name="loanAmount" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="loanPeriod" class="block text-sm font-medium text-gray-700">Loan Period (years)</label>
+                    <input type="number" id="loanPeriod" name="loanPeriod" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="companyName" class="block text-sm font-medium text-gray-700">Company Name</label>
+                    <input type="text" id="companyName" name="companyName" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Calculate Loan</button>
+            </form>
+        </section>
+
+        <section id="results" class="bg-white rounded-lg shadow-md p-6 mb-12 hidden">
+            <h2 class="text-2xl font-semibold mb-4">Loan Details</h2>
+            <div id="loanDetails" class="space-y-2"></div>
+        </section>
+
+        <section id="stringOperations" class="bg-white rounded-lg shadow-md p-6 mb-12 hidden">
+            <h2 class="text-2xl font-semibold mb-4">String Operations on Company Name</h2>
+            <div id="stringDetails" class="space-y-2"></div>
+        </section>
+
+        <section id="about" class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-2xl font-semibold mb-4">About Betake Logistics</h2>
+            <p>Betake Logistics is a leading provider of logistics solutions and financial services for businesses. Our loan program is designed to help companies expand their operations and reach new heights.</p>
+        </section>
+
+        <section id="contact" class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+            <p>For more information about our loan services, please contact us:</p>
+            <p>Email: loans@betakelogistics.com</p>
+            <p>Phone: (+256) 750687790</p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+        <p>&copy; <span id="currentYear"></span> Betake Logistics. <br>All rights reserved.</p>
+    </footer>
+    
+        <script>
+            function calculateInterest(principal, years) {
+                return principal * 0.10 * years;
+            }
+    
+            function stringOperations(str) {
+                return {
+                    copy: str,
+                    reverse: str.split('').reverse().join(''),
+                    uppercase: str.toUpperCase(),
+                    lowercase: str.toLowerCase(),
+                    compare: str === str ? "equal" : "not equal"
+                };
+            }
+    
+            document.getElementById('loanForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let loanAmount = parseFloat(document.getElementById('loanAmount').value);
+                let loanPeriod = parseInt(document.getElementById('loanPeriod').value);
+                let companyName = document.getElementById('companyName').value;
+                
+                let interest = calculateInterest(loanAmount, loanPeriod);
+                let totalAmount = loanAmount + interest;
+                
+                let resultsSection = document.getElementById('results');
+                resultsSection.classList.remove('hidden');
+                document.getElementById('loanDetails').innerHTML = `
+                    <p class="text-sm text-gray-600">Principal: <span class="font-semibold text-gray-800">$${loanAmount.toFixed(2)}</span></p>
+                    <p class="text-sm text-gray-600">Period: <span class="font-semibold text-gray-800">${loanPeriod} years</span></p>
+                    <p class="text-sm text-gray-600">Interest: <span class="font-semibold text-gray-800">$${interest.toFixed(2)}</span></p>
+                    <p class="text-sm text-gray-600">Total Amount: <span class="font-semibold text-gray-800">$${totalAmount.toFixed(2)}</span></p>
+                `;
+                
+                let strOps = stringOperations(companyName);
+                let stringOpSection = document.getElementById('stringOperations');
+                stringOpSection.classList.remove('hidden');
+                document.getElementById('stringDetails').innerHTML = `
+                    <p class="text-sm text-gray-600">Copy: <span class="font-semibold text-gray-800">${strOps.copy}</span></p>
+                    <p class="text-sm text-gray-600">Reverse: <span class="font-semibold text-gray-800">${strOps.reverse}</span></p>
+                    <p class="text-sm text-gray-600">Uppercase: <span class="font-semibold text-gray-800">${strOps.uppercase}</span></p>
+                    <p class="text-sm text-gray-600">Lowercase: <span class="font-semibold text-gray-800">${strOps.lowercase}</span></p>
+                    <p class="text-sm text-gray-600">Strings are <span class="font-semibold text-gray-800">${strOps.compare}</span></p>
+                `;
+    
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+    
+   // Responsive menu toggle
+   const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('block');
+            menu.classList.toggle('absolute');
+            menu.classList.toggle('top-16');
+            menu.classList.toggle('right-0');
+            menu.classList.toggle('bg-blue-600');
+            menu.classList.toggle('w-full');
+            menu.classList.toggle('text-right');
+            menu.classList.toggle('p-4');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth < 768) { // Only for mobile view
+                    e.preventDefault();
+                    toggleMenu();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }, 300); // Delay to allow menu to close before scrolling
+                    }
+                }
+            });
+        });
+
+                  document.getElementById('downloadBtn').addEventListener('click', function() {
+            const cppCode = `#include <iostream>
+#include <string>
+#include <algorithm>
+
+class LoanCalculator {
+private:
+    double principal;
+    int years;
+    const double INTEREST_RATE = 0.10;
+
+public:
+    LoanCalculator(double p, int y) : principal(p), years(y) {}
+
+    double calculateInterest() {
+        return principal * INTEREST_RATE * years;
+    }
+
+    double calculateTotalAmount() {
+        return principal + calculateInterest();
+    }
+};
+
+class StringOperations {
+private:
+    std::string str;
+
+public:
+    StringOperations(const std::string& s) : str(s) {}
+
+    std::string copy() { return str; }
+
+    std::string reverse() {
+        std::string rev = str;
+        std::reverse(rev.begin(), rev.end());
+        return rev;
+    }
+
+    std::string uppercase() {
+        std::string up = str;
+        std::transform(up.begin(), up.end(), up.begin(), ::toupper);
+        return up;
+    }
+
+    std::string lowercase() {
+        std::string low = str;
+        std::transform(low.begin(), low.end(), low.begin(), ::tolower);
+        return low;
+    }
+
+    std::string compare() {
+        return str == str ? "equal" : "not equal";
+    }
+};
+
+int main() {
+    double loanAmount;
+    int loanPeriod;
+    std::string companyName;
+
+    std::cout << "Enter loan amount: ";
+    std::cin >> loanAmount;
+    std::cout << "Enter loan period (years): ";
+    std::cin >> loanPeriod;
+    std::cout << "Enter company name: ";
+    std::cin.ignore();
+    std::getline(std::cin, companyName);
+
+    LoanCalculator loan(loanAmount, loanPeriod);
+    StringOperations strOps(companyName);
+
+    std::cout << "\\nLoan Details:\\n";
+    std::cout << "Principal: $" << loanAmount << std::endl;
+    std::cout << "Period: " << loanPeriod << " years" << std::endl;
+    std::cout << "Interest: $" << loan.calculateInterest() << std::endl;
+    std::cout << "Total Amount: $" << loan.calculateTotalAmount() << std::endl;
+
+    std::cout << "\\nString Operations on Company Name:\\n";
+    std::cout << "Copy: " << strOps.copy() << std::endl;
+    std::cout << "Reverse: " << strOps.reverse() << std::endl;
+    std::cout << "Uppercase: " << strOps.uppercase() << std::endl;
+    std::cout << "Lowercase: " << strOps.lowercase() << std::endl;
+    std::cout << "Strings are " << strOps.compare() << std::endl;
+
+    return 0;
+}`;
+
+            const blob = new Blob([cppCode], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'calculator.cpp';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+          
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+     </script>
+    </body>
+    </html>
